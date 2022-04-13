@@ -156,6 +156,7 @@ namespace UsersManager.Models
         public static void RemoveSessionUser()
         {
             RemoveUser(CurrentUserId);
+            CurrentUserId = 0;
         }
         public static void RemoveUser(int userId)
         {
@@ -163,7 +164,6 @@ namespace UsersManager.Models
             {
                 RemoveLastAccess(userId);
                 UsersId.Remove(userId);
-                CurrentUserId = 0;
                 RenewSerialNumber();
             }
         }
